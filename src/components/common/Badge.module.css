@@ -1,0 +1,43 @@
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.default {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.success {
+  background: #dcfce7;
+  color: var(--color-success);
+}
+
+.warning {
+  background: #fef3c7;
+  color: var(--color-warning);
+}
+
+.danger {
+  background: #fee2e2;
+  color: var(--color-danger);
+}
+
+.purchase {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.invoice {
+  background: #e0f2fe;
+  color: #0284c7;
+}
