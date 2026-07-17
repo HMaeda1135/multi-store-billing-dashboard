@@ -55,7 +55,7 @@ export function TransactionDetailPage() {
   }[transaction.status]
 
   return (
-    <div>
+    <div className="pageContainer">
       <PageHeader
         title="仕入れ・請求 詳細"
         subtitle={`ID: ${transaction.id}`}

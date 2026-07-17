@@ -91,7 +91,7 @@ export function TransactionFormPage() {
   const activeVendors = vendors?.filter((v) => v.isActive) ?? []
 
   return (
-    <div>
+    <div className={styles.formPage}>
       <PageHeader
         title={isEdit ? '仕入れ・請求 編集' : '仕入れ・請求 新規登録'}
         subtitle={isEdit ? '登録済みデータを編集します' : '新しい仕入れ・請求データを登録します'}

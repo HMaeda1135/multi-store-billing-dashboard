@@ -3,6 +3,8 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  max-width: 100%;
+  min-width: 0;
 }
 
 .header {
@@ -18,9 +20,21 @@
 
 .body {
   padding: 20px;
+  min-width: 0;
+}
+
+.noPadding {
+  padding: 0;
+  min-width: 0;
 }
 
 @media (max-width: 767px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .header {
     padding: 12px 16px;
   }
@@ -28,8 +42,9 @@
   .body {
     padding: 16px;
   }
-}
 
-.noPadding {
-  padding: 0;
+  .noPadding {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

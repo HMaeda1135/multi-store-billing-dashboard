@@ -79,7 +79,7 @@ export function VendorListPage() {
   if (isLoading) return <Loading />
 
   return (
-    <div>
+    <div className="pageContainer">
       <PageHeader
         title="取引先管理"
         subtitle="取引先マスタの一覧・登録・編集"

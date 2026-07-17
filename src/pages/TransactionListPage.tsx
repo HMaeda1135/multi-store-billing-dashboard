@@ -100,7 +100,7 @@ export function TransactionListPage() {
   if (isPending && transactions === undefined) return <Loading />
 
   return (
-    <div>
+    <div className="pageContainer">
       <PageHeader
         title="仕入れ・請求一覧"
         subtitle="登録済みの仕入れ・請求データを管理"

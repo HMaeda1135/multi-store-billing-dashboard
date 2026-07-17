@@ -1,3 +1,9 @@
+.page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
 .summaryGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -11,6 +17,9 @@
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow);
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .summaryLabel {
@@ -23,6 +32,7 @@
   font-size: 24px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
 }
 
 .purchase {
@@ -44,48 +54,68 @@
   margin-bottom: 24px;
 }
 
+.grid2 > * {
+  min-width: 0;
+}
+
 .barChart {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 .barRow {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
   gap: 12px;
+  align-items: center;
 }
 
 .barLabel {
-  width: 60px;
   font-size: 12px;
   color: var(--color-text-muted);
   flex-shrink: 0;
 }
 
-.barTrack {
-  flex: 1;
+.barBars {
+  min-width: 0;
+  width: 100%;
   display: flex;
-  gap: 2px;
-  height: 20px;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.barLine {
+  width: 100%;
+  height: 10px;
+  background: var(--color-bg);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .barPurchase {
+  height: 100%;
   background: #7c3aed;
   border-radius: 2px;
-  min-width: 2px;
+  max-width: 100%;
   transition: width 0.3s;
 }
 
 .barInvoice {
+  height: 100%;
   background: #0284c7;
   border-radius: 2px;
-  min-width: 2px;
+  max-width: 100%;
   transition: width 0.3s;
 }
 
 .barLegend {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-top: 12px;
   font-size: 12px;
@@ -102,6 +132,7 @@
   width: 10px;
   height: 10px;
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .numeric {
@@ -126,5 +157,15 @@
 
   .summaryValue {
     font-size: 20px;
+  }
+
+  .barRow {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .barChart {
+    width: 100%;
+    max-width: 100%;
   }
 }

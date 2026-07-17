@@ -19,19 +19,33 @@
   overflow-y: auto;
   overflow-x: hidden;
   min-height: 0;
+  min-width: 0;
 }
 
 @media (max-width: 767px) {
   .layout {
     flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
 
   .main {
     width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    overflow: visible;
   }
 
   .content {
+    flex: none;
     width: 100%;
+    max-width: 100%;
     padding: 16px;
+    padding-bottom: calc(var(--mobile-bottom-padding) + env(safe-area-inset-bottom, 0px));
+    overflow-x: hidden;
+    overflow-y: visible;
   }
 }

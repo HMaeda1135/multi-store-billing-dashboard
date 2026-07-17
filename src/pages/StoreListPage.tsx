@@ -69,7 +69,7 @@ export function StoreListPage() {
   if (isLoading) return <Loading />
 
   return (
-    <div>
+    <div className="pageContainer">
       <PageHeader
         title="店舗管理"
         subtitle="店舗マスタの一覧・登録・編集"

@@ -7,7 +7,7 @@
   gap: 8px;
   padding: 0 12px;
   flex-shrink: 0;
-  z-index: 20;
+  z-index: 100;
 }
 
 .menuButton {
@@ -81,6 +81,8 @@
 @media (max-width: 767px) {
   .mobileHeader {
     display: flex;
+    position: sticky;
+    top: 0;
   }
 }
 

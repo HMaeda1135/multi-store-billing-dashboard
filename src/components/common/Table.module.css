@@ -1,5 +1,6 @@
 .tableWrapper {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -8,6 +9,7 @@
   width: 100%;
   min-width: 640px;
   font-size: 13px;
+  border-collapse: collapse;
 }
 
 .table th {

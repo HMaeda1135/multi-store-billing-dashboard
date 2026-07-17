@@ -45,8 +45,11 @@ export function DashboardPage() {
     return map[status]
   }
 
+  const getBarWidth = (value: number) =>
+    Math.min((value / maxTrendValue) * 100, 100)
+
   return (
-    <div>
+    <div className={styles.page}>
       <PageHeader
         title="ダッシュボード"
         subtitle="今月の仕入れ・請求状況の概要"
@@ -102,17 +105,21 @@ export function DashboardPage() {
             {summary.monthlyTrend.map((m) => (
               <div key={m.month} className={styles.barRow}>
                 <span className={styles.barLabel}>{m.month.slice(5)}月</span>
-                <div className={styles.barTrack}>
-                  <div
-                    className={styles.barPurchase}
-                    style={{ width: `${(m.purchaseTotal / maxTrendValue) * 100}%` }}
-                    title={`仕入れ: ${formatCurrency(m.purchaseTotal)}`}
-                  />
-                  <div
-                    className={styles.barInvoice}
-                    style={{ width: `${(m.invoiceTotal / maxTrendValue) * 100}%` }}
-                    title={`請求: ${formatCurrency(m.invoiceTotal)}`}
-                  />
+                <div className={styles.barBars}>
+                  <div className={styles.barLine}>
+                    <div
+                      className={styles.barPurchase}
+                      style={{ width: `${getBarWidth(m.purchaseTotal)}%` }}
+                      title={`仕入れ: ${formatCurrency(m.purchaseTotal)}`}
+                    />
+                  </div>
+                  <div className={styles.barLine}>
+                    <div
+                      className={styles.barInvoice}
+                      style={{ width: `${getBarWidth(m.invoiceTotal)}%` }}
+                      title={`請求: ${formatCurrency(m.invoiceTotal)}`}
+                    />
+                  </div>
                 </div>
               </div>
             ))}
