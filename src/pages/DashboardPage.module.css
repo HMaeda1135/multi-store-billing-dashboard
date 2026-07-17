@@ -1,6 +1,6 @@
 .summaryGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -39,7 +39,7 @@
 
 .grid2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -111,10 +111,20 @@
 
 @media (max-width: 1024px) {
   .summaryGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .grid2 {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryValue {
+    font-size: 20px;
   }
 }

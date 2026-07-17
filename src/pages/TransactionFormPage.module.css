@@ -17,8 +17,17 @@
   border-top: 1px solid var(--color-border);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .form {
     grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .actions > * {
+    width: 100%;
   }
 }

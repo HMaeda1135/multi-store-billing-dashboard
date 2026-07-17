@@ -28,3 +28,9 @@
   color: var(--color-text-muted);
   margin-bottom: 12px;
 }
+
+@media (max-width: 767px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+}

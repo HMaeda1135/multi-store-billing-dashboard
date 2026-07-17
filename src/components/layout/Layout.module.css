@@ -17,11 +17,21 @@
   flex: 1;
   padding: 24px;
   overflow-y: auto;
+  overflow-x: hidden;
   min-height: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+  }
+
   .content {
+    width: 100%;
     padding: 16px;
   }
 }

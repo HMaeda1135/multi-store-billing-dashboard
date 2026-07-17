@@ -1,18 +1,8 @@
 import { NavLink } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { roleLabels } from '../../lib/labels'
+import { adminNavItems, staffNavItems } from './navConfig'
 import styles from './Sidebar.module.css'
-
-const adminNavItems = [
-  { to: '/dashboard', label: 'ダッシュボード' },
-  { to: '/transactions', label: '仕入れ・請求一覧' },
-  { to: '/stores', label: '店舗管理' },
-  { to: '/vendors', label: '取引先管理' },
-]
-
-const staffNavItems = [
-  { to: '/transactions', label: '仕入れ・請求一覧' },
-]
 
 export function Sidebar() {
   const { user, isAdmin } = useAuth()

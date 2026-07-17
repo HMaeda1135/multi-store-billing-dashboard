@@ -56,3 +56,18 @@
   padding: 16px 20px;
   border-top: 1px solid var(--color-border);
 }
+
+@media (max-width: 767px) {
+  .overlay {
+    padding: 16px;
+    align-items: flex-end;
+  }
+
+  .modalFooter {
+    flex-direction: column-reverse;
+  }
+
+  .modalFooter > * {
+    width: 100%;
+  }
+}
